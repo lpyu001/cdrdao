@@ -95,19 +95,19 @@ int main(int argc, char *argv[])
 	return 4;
     }
     fclose (device);
-*/    
+*/
     /* Testing for PSX CD */
 
     {
 	char *psxdump_args[] = { "psxdump", "-T", "-d", cdrom_device, NULL };
 	i = run_command(psxdump_args);
     }
-    
+
     if (i!=0) {
        fprintf(stderr, "Unable to read from %s or disk is not PSX, please check and retry.\n", cdrom_device);
        exit (1);
     }
-    
+
     /* Total bytes (about to) read */
     readin = 0;
 
@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
 			    track_info[3]='/';
                             fseek (inf, prevseek, SEEK_SET);
                             fputs (buf, inf);
-                                       			    
+	    
 			    {
 				char *psxdump_args[] = {
 				    "psxdump", "-f", file_to_read, "-d",
